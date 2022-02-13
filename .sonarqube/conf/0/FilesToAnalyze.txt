@@ -1,0 +1,8 @@
+﻿G:\test\testJenkins\Pharmacie\Pharmacie\connexion\ConnexionBDD.cs
+G:\test\testJenkins\Pharmacie\Pharmacie\controleur\Controle.cs
+G:\test\testJenkins\Pharmacie\Pharmacie\modele\Medicament.cs
+G:\test\testJenkins\Pharmacie\Pharmacie\modele\Recommandation.cs
+G:\test\testJenkins\Pharmacie\Pharmacie\Program.cs
+G:\test\testJenkins\Pharmacie\Pharmacie\vue\FrmPharmacie.cs
+G:\test\testJenkins\Pharmacie\Pharmacie\vue\FrmPharmacie.Designer.cs
+G:\test\testJenkins\Pharmacie\Pharmacie\vue\FrmPharmacie.resx

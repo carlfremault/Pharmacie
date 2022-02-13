@@ -1,0 +1,1 @@
+G:\test\testJenkins\Pharmacie\.sonarqube\out\0
