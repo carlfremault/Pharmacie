@@ -6,7 +6,9 @@ namespace Pharmacie.modele
     /// <summary>
     /// Classe métier Medicament
     /// </summary>
+#pragma warning disable S1210 // "Equals" and the comparison operators should be overridden when implementing "IComparable"
     public class Medicament : IComparable
+#pragma warning restore S1210 // "Equals" and the comparison operators should be overridden when implementing "IComparable"
     {
         public ObjectId Id { get; set; }
         public string nom { get; set; }
