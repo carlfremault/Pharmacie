@@ -11,7 +11,6 @@ namespace Pharmacie.connexion
     /// </summary>
     public class ConnexionBdd
     {
-        private readonly MongoClient client;
         private IMongoDatabase db;
         private static ConnexionBdd instance;
 
@@ -24,7 +23,7 @@ namespace Pharmacie.connexion
         {
             try
             {
-                client = new MongoClient(connectionString);
+                MongoClient client = new MongoClient(connectionString);
                 db = client.GetDatabase(dataBase);
             }
             catch (Exception e)
