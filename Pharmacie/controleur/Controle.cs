@@ -2,23 +2,57 @@
 using Pharmacie.vue;
 using Pharmacie.connexion;
 using System.Collections.Generic;
+using System;
+using System.Windows.Forms;
 
 namespace Pharmacie.controleur
 {
     public class Controle
     {
-        private const string connectionString = "mongodb://adminpharmacie:pwdadminpharmacie@127.0.0.1:27017";
+        private string connectionString = null;
+        private string pwd = null;
         private const string dataBase = "pharmacie";
         private const string nomColRecommandations = "recommandations";
         private const string nomColMedicaments = "medicaments";
         private readonly ConnexionBdd connexionBDD;
+
+        private string GetPwd()
+        {
+            try
+            {
+                return System.IO.File.ReadAllText("pwd.txt");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Application.Exit();
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Création de la chaîne de connexiion
+        /// </summary>
+        /// <returns></returns>
+        private string Connection()
+        {
+            if (pwd is null)
+            {
+                pwd = GetPwd();
+            }
+            if (connectionString is null)
+            {
+                connectionString = "mongodb://adminpharmacie:" + pwd + "@127.0.0.1:27017";
+            }
+            return connectionString;
+        }
 
         /// <summary>
         /// Constructeur : récupère l'instance pour la connection à la BDD et ouvre la fenêtre
         /// </summary>
         public Controle()
         {
-            this.connexionBDD = ConnexionBdd.GetInstance(connectionString, dataBase);
+            this.connexionBDD = ConnexionBdd.GetInstance(Connection(), dataBase);
             FrmPharmacie frmPharmacie = new FrmPharmacie(this);
             frmPharmacie.ShowDialog();
         }
