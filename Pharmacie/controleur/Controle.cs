@@ -12,14 +12,14 @@ namespace Pharmacie.controleur
         private const string dataBase = "pharmacie";
         private const string nomColRecommandations = "recommandations";
         private const string nomColMedicaments = "medicaments";
-        private readonly ConnexionBDD connexionBDD;
+        private readonly ConnexionBdd connexionBDD;
 
         /// <summary>
         /// Constructeur : récupère l'instance pour la connection à la BDD et ouvre la fenêtre
         /// </summary>
         public Controle()
         {
-            this.connexionBDD = ConnexionBDD.GetInstance(connectionString, dataBase);
+            this.connexionBDD = ConnexionBdd.GetInstance(connectionString, dataBase);
             FrmPharmacie frmPharmacie = new FrmPharmacie(this);
             frmPharmacie.ShowDialog();
         }

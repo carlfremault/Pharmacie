@@ -9,18 +9,18 @@ namespace Pharmacie.connexion
     /// <summary>
     /// Classe de connexion à MongoDB
     /// </summary>
-    public class ConnexionBDD
+    public class ConnexionBdd
     {
         private readonly MongoClient client;
         private IMongoDatabase db;
-        private static ConnexionBDD instance;
+        private static ConnexionBdd instance;
 
         /// <summary>
         /// Constructeur privé : connexion à MongoDB et accès à la base de données
         /// </summary>
         /// <param name="connectionString"></param>
         /// <param name="dataBase"></param>
-        private ConnexionBDD(string connectionString, string dataBase)
+        private ConnexionBdd(string connectionString, string dataBase)
         {
             try
             {
@@ -40,11 +40,11 @@ namespace Pharmacie.connexion
         /// <param name="connectionString"></param>
         /// <param name="dataBase"></param>
         /// <returns></returns>
-        public static ConnexionBDD GetInstance(string connectionString, string dataBase)
+        public static ConnexionBdd GetInstance(string connectionString, string dataBase)
         {
             if (instance is null)
             {
-                instance = new ConnexionBDD(connectionString, dataBase);
+                instance = new ConnexionBdd(connectionString, dataBase);
             }
             return instance;
         }
