@@ -11,7 +11,7 @@ namespace Pharmacie.connexion
     /// </summary>
     public class ConnexionBdd
     {
-        private IMongoDatabase db;
+        private readonly IMongoDatabase db;
         private static ConnexionBdd instance;
 
         /// <summary>
