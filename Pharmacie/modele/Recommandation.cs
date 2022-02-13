@@ -28,7 +28,7 @@ namespace Pharmacie.modele
         /// <returns></returns>
         public override string ToString()
         {
-            if (code.Equals(""))
+            if (string.IsNullOrEmpty(code))
             {
                 return libelle;
             }
