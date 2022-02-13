@@ -7,7 +7,6 @@ namespace Pharmacie.controleur
 {
     public class Controle
     {
-//        private const string connectionString = "mongodb://127.0.0.1:27017";
         private const string connectionString = "mongodb://adminpharmacie:pwdadminpharmacie@127.0.0.1:27017";
         private const string dataBase = "pharmacie";
         private const string nomColRecommandations = "recommandations";
